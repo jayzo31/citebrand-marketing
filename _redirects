@@ -1,0 +1,19 @@
+# Cloudflare Pages redirects
+# Redirect www to non-www
+https://www.citebrand.com/* https://citebrand.com/:splat 301
+https://www.citebrand.ai/* https://citebrand.ai/:splat 301
+
+# Redirect .ai domain to .com (optional - remove if you want both to work independently)
+# https://citebrand.ai/* https://citebrand.com/:splat 301
+
+# App redirects - redirect login/signup/dashboard to the app subdomain
+/login https://app.citebrand.com/login 302
+/signup https://app.citebrand.com/login 302
+/register https://app.citebrand.com/login 302
+/dashboard https://app.citebrand.com/dashboard 302
+/dashboard/* https://app.citebrand.com/dashboard/:splat 302
+/settings https://app.citebrand.com/settings 302
+/settings/* https://app.citebrand.com/settings/:splat 302
+/projects https://app.citebrand.com/projects 302
+/projects/* https://app.citebrand.com/projects/:splat 302
+/help https://app.citebrand.com/help 302
