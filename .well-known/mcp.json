@@ -1,0 +1,53 @@
+{
+  "mcpServers": {
+    "citebrand": {
+      "url": "https://api.citebrand.ai/mcp",
+      "transport": "streamable-http",
+      "headers": {
+        "Authorization": "Bearer <your CiteBrand API key>"
+      }
+    }
+  },
+  "$schema": "https://static.modelcontextprotocol.io/schemas/v1/server-card.schema.json",
+  "name": "ai.citebrand/citebrand",
+  "version": "1.3.0",
+  "description": "Whether AI engines name and link a brand, with evidence for every number; a brand's verified and signed facts; site audits for AI crawlers and agents.",
+  "websiteUrl": "https://citebrand.ai",
+  "documentationUrl": "https://api.citebrand.ai/docs",
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://api.citebrand.ai/mcp",
+      "headers": [
+        {
+          "name": "Authorization",
+          "description": "Bearer <API key> (cb_live_… or cb_test_…)",
+          "isRequired": true,
+          "isSecret": true
+        }
+      ]
+    }
+  ],
+  "tools": [
+    "measure_brand",
+    "get_visibility",
+    "get_category",
+    "discover_questions",
+    "get_plan",
+    "get_deliverable",
+    "audit_site",
+    "get_search_data",
+    "get_job",
+    "get_evidence",
+    "cancel_job",
+    "get_outreach",
+    "check_crawlers",
+    "get_mentions",
+    "get_proof",
+    "get_facts",
+    "get_sitekit",
+    "get_public_facts",
+    "verify_facts",
+    "visit_site"
+  ]
+}

@@ -1,0 +1,223 @@
+{
+  "protocolVersion": "0.3.0",
+  "name": "CiteBrand",
+  "description": "Measures whether AI engines name and link a brand for buyer questions, per lane (assistants, AI apps, search-page AI), with sample sizes, sources and resolvable evidence for every claim; returns evidence-cited plans and monitors change week over week.",
+  "url": "https://api.citebrand.ai/v1",
+  "preferredTransport": "HTTP+JSON",
+  "additionalInterfaces": [
+    {
+      "url": "https://api.citebrand.ai/mcp",
+      "transport": "MCP (streamable HTTP)"
+    },
+    {
+      "url": "https://api.citebrand.ai/v1",
+      "transport": "REST (OpenAPI 3.1 at /.well-known/openapi.json)"
+    }
+  ],
+  "provider": {
+    "organization": "CiteBrand",
+    "url": "https://citebrand.ai"
+  },
+  "version": "1.3.0",
+  "documentationUrl": "https://api.citebrand.ai/docs",
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": true,
+    "stateTransitionHistory": false
+  },
+  "securitySchemes": {
+    "bearer": {
+      "type": "http",
+      "scheme": "bearer",
+      "description": "API key cb_live_… or cb_test_…"
+    }
+  },
+  "security": [
+    {
+      "bearer": []
+    }
+  ],
+  "defaultInputModes": [
+    "application/json"
+  ],
+  "defaultOutputModes": [
+    "application/json"
+  ],
+  "skills": [
+    {
+      "id": "measure",
+      "name": "Measure AI visibility",
+      "description": "Ask AI engines buyer questions and report, per lane and engine, how often the brand is named and linked, with n, source and evidence ids. Async: a job, then GET visibility.",
+      "tags": [
+        "ai-visibility",
+        "geo",
+        "measurement"
+      ],
+      "examples": [
+        "How often does ChatGPT mention peec.ai for \"best AI visibility tools\"?",
+        "Measure otterly.ai on Google AI and the ChatGPT app with these 5 questions."
+      ],
+      "inputModes": [
+        "application/json"
+      ],
+      "outputModes": [
+        "application/json"
+      ],
+      "x-endpoints": {
+        "mcp_tools": [
+          "measure_brand",
+          "get_job",
+          "get_visibility",
+          "get_evidence"
+        ],
+        "rest": [
+          "POST /v1/sites/{domain}/measure",
+          "GET /v1/jobs/{id}",
+          "GET /v1/sites/{domain}/visibility",
+          "GET /v1/evidence/{id}"
+        ]
+      }
+    },
+    {
+      "id": "plan",
+      "name": "Evidence-cited plan",
+      "description": "Ranked recommendations (page, exact change, evidence, how to measure) and publishable deliverables for a measured brand. Reading is open to keys that verified the domain; writing a plan is operator-only in v1.",
+      "tags": [
+        "recommendations",
+        "content"
+      ],
+      "examples": [
+        "What should otterly.ai change to be cited for pricing questions?"
+      ],
+      "inputModes": [
+        "application/json"
+      ],
+      "outputModes": [
+        "application/json"
+      ],
+      "x-endpoints": {
+        "mcp_tools": [
+          "get_plan",
+          "get_deliverable",
+          "get_search_data",
+          "get_category",
+          "audit_site",
+          "check_crawlers"
+        ],
+        "rest": [
+          "GET /v1/sites/{domain}/plan",
+          "GET /v1/sites/{domain}/deliverables/{rec_id}",
+          "GET /v1/sites/{domain}/crawl-check"
+        ]
+      }
+    },
+    {
+      "id": "offsite",
+      "name": "Off-site: outreach, mentions, proof",
+      "description": "Who to ask for a link (domains linking to competitors but not to you, domains AI answers cite, pages naming you without a link), what news, blogs and forums say about the brand, and dated screenshots of the Google results behind the answers.",
+      "tags": [
+        "backlinks",
+        "outreach",
+        "mentions",
+        "proof"
+      ],
+      "examples": [
+        "Which sites should otterly.ai pitch for a link?",
+        "Show me what Google showed for \"best AI visibility tools\"."
+      ],
+      "inputModes": [
+        "application/json"
+      ],
+      "outputModes": [
+        "application/json"
+      ],
+      "x-endpoints": {
+        "mcp_tools": [
+          "get_outreach",
+          "get_mentions",
+          "get_proof",
+          "get_evidence"
+        ],
+        "rest": [
+          "GET /v1/sites/{domain}/outreach",
+          "GET /v1/sites/{domain}/mentions",
+          "GET /v1/sites/{domain}/proof"
+        ]
+      }
+    },
+    {
+      "id": "agent_ready",
+      "name": "Make a site agent-ready",
+      "description": "Verified facts quoted from a brand's own pages, a WebMCP site kit that registers read-only tools from them, a hosted public facts document, a check that a site's facts file is signed by the key its owner publishes (verify_facts, no key), and a verification visit by CiteBrand's agent.",
+      "tags": [
+        "webmcp",
+        "facts",
+        "agent-readiness"
+      ],
+      "examples": [
+        "What does otterly.ai charge, with the source?",
+        "Give me the site kit for otterly.ai."
+      ],
+      "inputModes": [
+        "application/json"
+      ],
+      "outputModes": [
+        "application/json"
+      ],
+      "x-endpoints": {
+        "mcp_tools": [
+          "get_facts",
+          "get_sitekit",
+          "get_public_facts",
+          "verify_facts",
+          "visit_site",
+          "audit_site"
+        ],
+        "rest": [
+          "GET /v1/sites/{domain}/facts",
+          "GET /v1/sites/{domain}/sitekit",
+          "GET /v1/public/{domain}/facts",
+          "GET /v1/public/{domain}/facts/verify",
+          "GET /v1/sites/{domain}/agent-visit"
+        ]
+      }
+    },
+    {
+      "id": "monitor",
+      "name": "Monitor weekly",
+      "description": "Re-measure weekly with the same questions and engines, compare with the previous run (shared questions and engines only), and deliver job events by signed webhook.",
+      "tags": [
+        "monitoring",
+        "webhooks"
+      ],
+      "examples": [
+        "Re-measure peec.ai every week and tell me when it changes."
+      ],
+      "inputModes": [
+        "application/json"
+      ],
+      "outputModes": [
+        "application/json"
+      ],
+      "x-endpoints": {
+        "mcp_tools": [
+          "get_job",
+          "cancel_job"
+        ],
+        "rest": [
+          "POST /v1/sites/{domain}/subscribe",
+          "POST /v1/webhooks",
+          "GET /v1/sites/{domain}/history",
+          "DELETE /v1/jobs/{id}"
+        ]
+      }
+    }
+  ],
+  "x-citebrand": {
+    "note": "This card describes CiteBrand's skills for orchestrators. The A2A message protocol (message/send) is not served in v1: call the MCP server or the REST API listed under additionalInterfaces.",
+    "llms_txt": "https://api.citebrand.ai/llms.txt",
+    "openapi": "https://api.citebrand.ai/.well-known/openapi.json",
+    "mcp_json": "https://api.citebrand.ai/.well-known/mcp.json",
+    "health": "https://api.citebrand.ai/v1/health"
+  }
+}

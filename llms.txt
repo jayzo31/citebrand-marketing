@@ -1,0 +1,22 @@
+# CiteBrand
+
+> CiteBrand shows a business whether AI assistants and AI search (ChatGPT, Gemini, Perplexity, Claude, Google AI Mode and AI Overviews) name and link it when buyers ask, what those engines cite instead, and what to change. The same service is an API and an MCP server that other AI agents can call.
+
+## Facts about CiteBrand
+
+- [Facts file](https://citebrand.ai/.well-known/citebrand-facts.json): what CiteBrand does, plans and prices, contact; each fact quoted from a page of citebrand.ai with its source URL. Signed (Ed25519); the public key is at https://citebrand.ai/.well-known/citebrand-key.txt and in DNS TXT _citebrand.citebrand.ai.
+- [Facts, plain text](https://citebrand.ai/.well-known/agent-facts.md)
+- [Verify the facts file](https://api.citebrand.ai/v1/public/citebrand.ai/facts/verify): no key needed.
+
+## The API and MCP server
+
+- [Agent docs](https://api.citebrand.ai/docs): what each tool does, when to call it, what it costs, the evidence contract.
+- [OpenAPI 3.1](https://api.citebrand.ai/.well-known/openapi.json) (also at https://citebrand.ai/.well-known/openapi.json)
+- [MCP server](https://api.citebrand.ai/mcp): streamable HTTP, API key as a Bearer header; discovery at https://citebrand.ai/.well-known/mcp.json
+- [A2A agent card](https://citebrand.ai/.well-known/agent.json)
+- [Health](https://api.citebrand.ai/v1/health)
+
+## Pages
+
+- [Home](https://citebrand.ai/)
+- [AI visibility tools compared](https://citebrand.ai/compare/ai-visibility-tools/)
