@@ -1,0 +1,2 @@
+# CiteBrand signing keys for citebrand.ai (Ed25519). The same value may be published as a DNS TXT record at _citebrand.citebrand.ai.
+citebrand-key=v1;ed25519;AMc0sIXOzQeZ8/p6jPE2lcoGl+cPJrN5hEd/AMLCtxA=

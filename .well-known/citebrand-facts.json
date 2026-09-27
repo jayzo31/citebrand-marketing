@@ -2,23 +2,24 @@
   "format": "citebrand-facts/1",
   "domain": "citebrand.ai",
   "brand": "CiteBrand",
-  "generated_at": "2026-09-27T18:18:22.966Z",
-  "facts_version": "2026-09-27T18-17-36",
+  "generated_at": "2026-09-27T18:44:56.723Z",
+  "extracted_at": "2026-09-27T18:44:01.405Z",
+  "facts_version": "2026-09-27T18-44-01",
   "facts_url": "https://citebrand.ai/.well-known/citebrand-facts.json",
   "agent_facts_url": "https://citebrand.ai/.well-known/agent-facts.md",
-  "hosted_url": "http://localhost:4500/v1/public/citebrand.ai/facts",
+  "hosted_url": "https://api.citebrand.ai/v1/public/citebrand.ai/facts",
   "note": "Facts about CiteBrand, each quoted from a page of citebrand.ai: source_url is the page and quote is the exact text on it. Items marked owner_asserted were stated by CiteBrand without a page. Built by CiteBrand; nothing here is generated.",
   "about": {
     "id": "f_b3758bd107",
     "title": "CiteBrand",
-    "text": "CiteBrand is a diagnostic tool for AI search visibility.",
+    "text": "CiteBrand is the diagnostic tool for AI search visibility.",
     "source_url": "https://citebrand.ai/",
-    "quote": "The diagnostic tool for AI search visibility. Stop guessing, start fixing."
+    "quote": "The diagnostic tool for AI search visibility."
   },
   "products": [
     {
-      "id": "f_170b91f370",
-      "title": "AI visibility diagnostics",
+      "id": "f_2b78464889",
+      "title": "AI platform diagnostics",
       "text": "CiteBrand gives actionable diagnostics for visibility in ChatGPT, Claude, Gemini, and Perplexity.",
       "source_url": "https://citebrand.ai/",
       "quote": "Get actionable diagnostics for ChatGPT, Claude, Gemini, and Perplexity visibility."
@@ -33,43 +34,57 @@
     {
       "id": "f_4b2185899d",
       "title": "Sentiment Diagnostics",
-      "text": "Sentiment Diagnostics shows why LLMs describe your pricing as expensive or your UX as complex.",
+      "text": "Sentiment Diagnostics shows why LLMs think your pricing is \"expensive\" or your UX is \"complex\", with specific fixes.",
       "source_url": "https://citebrand.ai/",
-      "quote": "Sentiment Diagnostics Discover why LLMs think your pricing is \"expensive\" or UX is \"complex\"."
+      "quote": "Sentiment Diagnostics Discover why LLMs think your pricing is \"expensive\" or UX is \"complex\". Get specific fixes."
     },
     {
       "id": "f_2534ce6a91",
       "title": "Intent Mismatch Detection",
-      "text": "Intent Mismatch Detection shows the content format that wins in AI answers, such as comparison tables instead of blog posts.",
+      "text": "Intent Mismatch Detection shows the content format that wins when AI wants a different format than you have.",
       "source_url": "https://citebrand.ai/",
-      "quote": "AI wants comparison tables but you have blog posts? We show the content format that wins."
+      "quote": "Intent Mismatch Detection AI wants comparison tables but you have blog posts? We show the content format that wins."
     },
     {
       "id": "f_1fbacf0aad",
       "title": "Knowledge Graph Check",
       "text": "Knowledge Graph Check checks whether you are in Wikidata, Google Knowledge Graph and other sources LLMs trust.",
       "source_url": "https://citebrand.ai/",
-      "quote": "Are you in Wikidata? Google Knowledge Graph? We check all sources LLMs trust."
+      "quote": "Knowledge Graph Check Are you in Wikidata? Google Knowledge Graph? We check all sources LLMs trust."
     },
     {
       "id": "f_015afc3de4",
       "title": "Hallucination Detection",
-      "text": "Hallucination Detection compares LLM answers against your uploaded truth files to find wrong pricing, features, or facts.",
+      "text": "Hallucination Detection uses your uploaded truth files to find every time an LLM gets your pricing, features, or facts wrong.",
       "source_url": "https://citebrand.ai/",
-      "quote": "Upload your truth files. We find every time an LLM gets your pricing, features, or facts wrong."
+      "quote": "Hallucination Detection Upload your truth files. We find every time an LLM gets your pricing, features, or facts wrong."
     },
     {
       "id": "f_29f5f758c0",
       "title": "Competitor Tracking",
-      "text": "Competitor Tracking shows where competitors appear in AI answers and you don't.",
+      "text": "Competitor Tracking shows exactly where competitors appear and you don't.",
       "source_url": "https://citebrand.ai/",
       "quote": "Competitor Tracking See exactly where competitors appear and you don't."
+    },
+    {
+      "id": "f_ea42f659a5",
+      "title": "Prioritized action list",
+      "text": "CiteBrand gives a prioritized list of specific URLs, content, and actions to take.",
+      "source_url": "https://citebrand.ai/",
+      "quote": "Get a prioritized list of specific URLs, content, and actions to take."
+    },
+    {
+      "id": "f_4db1a32996",
+      "title": "Diagnostics scan",
+      "text": "CiteBrand scans all major AI platforms and crawls every citation source.",
+      "source_url": "https://citebrand.ai/",
+      "quote": "We scan all major AI platforms and crawl every citation source."
     }
   ],
   "plans": [
     {
       "id": "f_a113e85859",
-      "title": "Free Trial",
+      "title": "Free trial",
       "text": "CiteBrand offers a 14-day free trial.",
       "price": null,
       "period": null,
@@ -79,42 +94,51 @@
     {
       "id": "f_3c8867258d",
       "title": "Free credits",
-      "text": "New users get 500 free credits and no credit card is required.",
+      "text": "No credit card is required and 500 free credits are included.",
       "price": null,
       "period": null,
       "source_url": "https://citebrand.ai/",
       "quote": "No credit card required - 500 free credits included"
     },
     {
-      "id": "f_655ce147ac",
-      "title": "Annual billing",
-      "text": "Annual billing is 20% off.",
-      "price": null,
-      "period": null,
-      "source_url": "https://citebrand.ai/",
-      "quote": "Monthly Annual (20% off)"
-    },
-    {
       "id": "f_45060cb51e",
       "title": "Solo",
-      "text": "The Solo plan, for freelancers and small agencies, costs $149 per month and includes 2,500 credits per month.",
+      "text": "The Solo plan, for freelancers and small agencies, costs $149 per month and includes 2,500 credits/month, 3 projects and all 5 AI platforms.",
       "price": "$149",
       "period": "per month",
       "source_url": "https://citebrand.ai/",
-      "quote": "Solo For freelancers and small agencies $149 /month 2,500 credits/month"
+      "quote": "Solo For freelancers and small agencies $149 /month 2,500 credits/month 2,500 credits/month 3 projects All 5 AI platforms"
     },
     {
       "id": "f_6bcf45e515",
       "title": "Growth",
-      "text": "The Growth plan, for growing agencies, costs $499 per month and includes 10,000 credits per month.",
+      "text": "The Growth plan, for growing agencies, costs $499 per month and includes 10,000 credits/month, 10 projects and all 5 AI platforms.",
       "price": "$499",
       "period": "per month",
       "source_url": "https://citebrand.ai/",
-      "quote": "Growth For growing agencies $499 /month 10,000 credits/month"
+      "quote": "Growth For growing agencies $499 /month 10,000 credits/month 10,000 credits/month 10 projects All 5 AI platforms"
     },
     {
-      "id": "f_d7be3f7ac0",
-      "title": "Credits",
+      "id": "f_655ce147ac",
+      "title": "Annual billing",
+      "text": "Annual billing is 20% off.",
+      "price": null,
+      "period": "per year",
+      "source_url": "https://citebrand.ai/",
+      "quote": "Monthly Annual (20% off)"
+    },
+    {
+      "id": "f_df5dd2cf47",
+      "title": "Credit-based pricing",
+      "text": "Pricing is credit-based: you pay for what you use and start with 500 free credits.",
+      "price": null,
+      "period": null,
+      "source_url": "https://citebrand.ai/",
+      "quote": "Pay for what you use. No surprise bills. Start with 500 free credits."
+    },
+    {
+      "id": "f_ccc2f533ba",
+      "title": "Credit terms",
       "text": "Credits are non-refundable and non-transferable.",
       "price": null,
       "period": null,
@@ -124,14 +148,30 @@
     {
       "id": "f_c4c87d0692",
       "title": "Subscription billing",
-      "text": "Subscription fees are billed in advance monthly or annually, and you can cancel at any time.",
+      "text": "Subscription fees are billed in advance on a monthly or annual basis.",
       "price": null,
       "period": null,
       "source_url": "https://citebrand.ai/terms",
-      "quote": "Subscription fees are billed in advance on a monthly or annual basis You can cancel your subscription at any time"
+      "quote": "Subscription fees are billed in advance on a monthly or annual basis"
+    },
+    {
+      "id": "f_b28e9e32ac",
+      "title": "Cancellation",
+      "text": "You can cancel your subscription at any time.",
+      "price": null,
+      "period": null,
+      "source_url": "https://citebrand.ai/terms",
+      "quote": "You can cancel your subscription at any time"
     }
   ],
   "contact": [
+    {
+      "id": "f_a2883da8a0",
+      "title": "email",
+      "text": "CiteBrand support can be contacted at support@citebrand.com.",
+      "source_url": "https://citebrand.ai/",
+      "quote": "Contact support@citebrand.com"
+    },
     {
       "id": "f_36222cccf7",
       "title": "social",
@@ -151,89 +191,98 @@
   ],
   "comparisons": [
     {
-      "id": "f_2acc979f75",
-      "title": "Peec AI",
-      "text": "CiteBrand's comparison lists Peec AI's entry plan at €95/mo for 50 prompts.",
-      "competitor": "Peec AI",
-      "source_url": "https://citebrand.ai/compare/ai-visibility-tools",
-      "quote": "Peec AI €95/mo (50 prompts)"
-    },
-    {
-      "id": "f_b6aa0583d1",
-      "title": "Otterly.ai",
-      "text": "CiteBrand's comparison lists Otterly.ai's entry plan at $29/mo Lite for 15 prompts.",
-      "competitor": "Otterly.ai",
-      "source_url": "https://citebrand.ai/compare/ai-visibility-tools",
-      "quote": "Otterly.ai $29/mo Lite (15 prompts)"
-    },
-    {
       "id": "f_a6c39ee8a1",
       "title": "Profound",
-      "text": "CiteBrand's comparison says Profound dropped self-serve plans in September 2026 and now offers a 7-day trial followed by custom Enterprise pricing.",
+      "text": "Profound dropped its self-serve plans in September 2026 and offers a 7-day trial then custom Enterprise pricing, reported at $2k–5k+ per month.",
       "competitor": "Profound",
       "source_url": "https://citebrand.ai/compare/ai-visibility-tools",
-      "quote": "Profound dropped its self-serve plans in September 2026 and now offers a 7-day trial followed by custom Enterprise pricing"
-    },
-    {
-      "id": "f_dd0d4a68ac",
-      "title": "Semrush AI Visibility Toolkit",
-      "text": "CiteBrand's comparison lists Semrush AI Visibility Toolkit at $99/mo per domain with 25 daily prompts.",
-      "competitor": "Semrush AI Visibility Toolkit",
-      "source_url": "https://citebrand.ai/compare/ai-visibility-tools",
-      "quote": "Semrush AI Visibility Toolkit $99/mo per domain (25 daily prompts)"
-    },
-    {
-      "id": "f_4b36decc15",
-      "title": "Ahrefs Brand Radar",
-      "text": "CiteBrand's comparison lists Ahrefs Brand Radar at $199/mo for the AI Visibility Index with 2,500 checks.",
-      "competitor": "Ahrefs Brand Radar",
-      "source_url": "https://citebrand.ai/compare/ai-visibility-tools",
-      "quote": "Ahrefs Brand Radar $199/mo AI Visibility Index (2,500 checks)"
-    },
-    {
-      "id": "f_d7d3eeb00c",
-      "title": "Scrunch AI",
-      "text": "CiteBrand's comparison lists Scrunch AI's Starter plan at $250–300/mo for 350 prompts.",
-      "competitor": "Scrunch AI",
-      "source_url": "https://citebrand.ai/compare/ai-visibility-tools",
-      "quote": "Scrunch AI $250–300/mo Starter (350 prompts)"
-    },
-    {
-      "id": "f_5988fdc393",
-      "title": "Writesonic GEO",
-      "text": "CiteBrand's comparison lists Writesonic GEO's Starter at $79/mo, with $199 Basic and $399 Growth plans.",
-      "competitor": "Writesonic GEO",
-      "source_url": "https://citebrand.ai/compare/ai-visibility-tools",
-      "quote": "Writesonic GEO $79/mo Starter $199 Basic, $399 Growth"
-    },
-    {
-      "id": "f_6a5031d03f",
-      "title": "Okara AI CMO",
-      "text": "CiteBrand's comparison lists Okara AI CMO at $129/mo Lite and $249 Pro.",
-      "competitor": "Okara AI CMO",
-      "source_url": "https://citebrand.ai/compare/ai-visibility-tools",
-      "quote": "Okara AI CMO $129/mo Lite $249 Pro"
+      "quote": "Profound dropped its self-serve plans in September 2026 and now offers a 7-day trial followed by custom Enterprise pricing, reported at $2k–5k+ per month."
     },
     {
       "id": "f_b56ce2596f",
       "title": "Hall",
-      "text": "CiteBrand's comparison lists Hall as free for 25 questions checked weekly.",
+      "text": "Hall has a free option with 25 questions checked weekly.",
       "competitor": "Hall",
       "source_url": "https://citebrand.ai/compare/ai-visibility-tools",
-      "quote": "Hall Free (25 questions, checked weekly)"
+      "quote": "start at free (Hall, 25 questions checked weekly)"
+    },
+    {
+      "id": "f_f7b051c831",
+      "title": "Otterly.ai vs Peec AI",
+      "text": "Otterly.ai starts at $29/month for 15 prompts, compared with €95/month for 50 prompts on Peec AI.",
+      "competitor": "Peec AI",
+      "source_url": "https://citebrand.ai/compare/ai-visibility-tools",
+      "quote": "Otterly.ai starts at $29/month for 15 prompts, compared with €95/month for 50 prompts on Peec AI."
+    },
+    {
+      "id": "f_2acc979f75",
+      "title": "Peec AI",
+      "text": "Peec AI plans are €95/mo (50 prompts), €245 (150 prompts) and €495 (350 prompts).",
+      "competitor": "Peec AI",
+      "source_url": "https://citebrand.ai/compare/ai-visibility-tools",
+      "quote": "Peec AI €95/mo (50 prompts) €245 (150 prompts), €495 (350 prompts)"
+    },
+    {
+      "id": "f_dd0d4a68ac",
+      "title": "Semrush AI Visibility Toolkit",
+      "text": "Semrush charges $99/month per domain.",
+      "competitor": "Semrush",
+      "source_url": "https://citebrand.ai/compare/ai-visibility-tools",
+      "quote": "Semrush charges $99/month per domain"
+    },
+    {
+      "id": "f_4b36decc15",
+      "title": "Ahrefs Brand Radar",
+      "text": "Ahrefs Brand Radar covers 8 engines, from $199/month.",
+      "competitor": "Ahrefs Brand Radar",
+      "source_url": "https://citebrand.ai/compare/ai-visibility-tools",
+      "quote": "Ahrefs Brand Radar (8 engines, from $199/month)"
+    },
+    {
+      "id": "f_d7d3eeb00c",
+      "title": "Scrunch AI",
+      "text": "Scrunch AI's entry plan costs $250–300 per month.",
+      "competitor": "Scrunch AI",
+      "source_url": "https://citebrand.ai/compare/ai-visibility-tools",
+      "quote": "Scrunch AI $250–300 per month"
+    },
+    {
+      "id": "f_5988fdc393",
+      "title": "Writesonic GEO",
+      "text": "Writesonic GEO lists an Action Center and content agents.",
+      "competitor": "Writesonic GEO",
+      "source_url": "https://citebrand.ai/compare/ai-visibility-tools",
+      "quote": "Writesonic GEO lists an Action Center and content agents"
+    },
+    {
+      "id": "f_6a5031d03f",
+      "title": "Okara AI CMO",
+      "text": "Okara AI CMO executes changes through GitHub pull requests and CMS publishing.",
+      "competitor": "Okara AI CMO",
+      "source_url": "https://citebrand.ai/compare/ai-visibility-tools",
+      "quote": "Okara AI CMO executes changes through GitHub pull requests and CMS publishing"
     }
   ],
   "faqs": [
     {
       "id": "f_aadcdc6f43",
       "title": "What Are Cookies?",
-      "text": "Cookies are small text files stored on your device when you visit a website.",
+      "text": "Cookies are small text files that are stored on your device when you visit a website.",
       "source_url": "https://citebrand.ai/cookie-policy",
       "quote": "Cookies are small text files that are stored on your device when you visit a website."
     }
   ],
   "counts": {
-    "facts": 27,
+    "facts": 32,
     "owner_asserted": 0
-  }
+  },
+  "signature": "EcFyUfNy7yxqdmtmc2J9EnDSDLVF/v6EaHqjirDz93lJkGx9ZwhSwo9nadZS/ZGpvcWvFFtwrzMtqOkynnBVCA==",
+  "signature_alg": "ed25519",
+  "key_id": "cbk_cb5d272e5660e770",
+  "signed_at": "2026-09-27T18:48:21.000Z",
+  "expires_at": "2026-12-26T18:48:21.000Z",
+  "facts_hash": "91a8ec346274d7ab4e6a01e2c149ae72b272c5be4af9a6e4a03356f1c0effcac",
+  "key_dns": "_citebrand.citebrand.ai",
+  "key_url": "https://citebrand.ai/.well-known/citebrand-key.txt",
+  "verify_url": "https://api.citebrand.ai/v1/public/citebrand.ai/facts/verify"
 }

@@ -5,3 +5,7 @@
   X-XSS-Protection: 1; mode=block
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=()
+
+# Discovery documents for AI agents: readable from any origin (MCP server cards and A2A cards expect CORS on GET)
+/.well-known/*
+  Access-Control-Allow-Origin: *
