@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Source Gap Analysis: Find the Websites AI Chatbots Cite for Competitors but Not You - CiteBrand</title>
+  <meta name="description" content="How to find the websites ChatGPT, Claude, Gemini and Google AI Mode cite about your competitors but never mention you: the prompt set, the citation log, the gap filter, and a worked example from 25 AI answers collected in September 2026.">
+  <link rel="canonical" href="https://citebrand.ai/guides/source-gap-analysis/">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233b82f6' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cpath d='m21 21-4.3-4.3'/%3E%3C/svg%3E">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #09090b;
+      --bg-card: #18181b;
+      --border: rgba(255, 255, 255, 0.08);
+      --text: #e4e4e7;
+      --text-secondary: #a1a1aa;
+      --text-muted: #71717a;
+      --accent: #3b82f6;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 60px;
+      border-bottom: 1px solid var(--border);
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--text);
+    }
+    .logo-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+    }
+    .logo-text { font-size: 20px; font-weight: 700; }
+    .btn-primary {
+      background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 60px 24px;
+    }
+    h1 {
+      font-size: 42px;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 8px;
+    }
+    .updated {
+      color: var(--text-muted);
+      margin-bottom: 40px;
+    }
+    h2 {
+      font-size: 24px;
+      font-weight: 600;
+      margin: 40px 0 16px;
+      color: var(--accent);
+    }
+    h3 {
+      font-size: 18px;
+      font-weight: 600;
+      margin: 24px 0 8px;
+    }
+    p, li {
+      color: var(--text-secondary);
+      margin-bottom: 16px;
+    }
+    p strong, li strong { color: var(--text); }
+    ul, ol { padding-left: 24px; }
+    li { margin-bottom: 8px; }
+    a { color: var(--accent); }
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 13px;
+      color: var(--text);
+    }
+    .disclosure {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px 20px;
+      font-size: 14px;
+    }
+    .answer {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin-bottom: 16px;
+    }
+    .answer p { margin-bottom: 0; }
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      margin-bottom: 16px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+    th, td {
+      text-align: left;
+      vertical-align: top;
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--border);
+    }
+    th {
+      background: var(--bg-card);
+      color: var(--text);
+      font-weight: 600;
+    }
+    td { color: var(--text-secondary); }
+    td:first-child { color: var(--text); font-weight: 600; }
+    tr:last-child td { border-bottom: none; }
+    .footer {
+      border-top: 1px solid var(--border);
+      padding: 40px 60px;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 14px;
+    }
+    .footer a { color: var(--text-muted); }
+    @media (max-width: 768px) {
+      .nav { padding: 20px 24px; }
+      .footer { padding: 40px 24px; }
+      h1 { font-size: 32px; }
+    }
+  </style>
+  <script src="/citebrand-webmcp.js" defer></script>
+</head>
+<body>
+  <nav class="nav">
+    <a href="/" class="logo">
+      <div class="logo-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>
+        </svg>
+      </div>
+      <span class="logo-text">CiteBrand</span>
+    </a>
+    <a href="/#how-it-works" class="btn-primary">How CiteBrand Works</a>
+  </nav>
+
+  <main class="container">
+    <h1>How to find the websites AI chatbots cite for your competitors but not you (source gap analysis)</h1>
+    <p class="updated">Updated <time datetime="2026-09-27">September 2026</time></p>
+
+    <div class="answer">
+      <p><strong>Short answer:</strong> Run the same buyer prompts across several AI engines, several times each. Log every URL each answer cites, and for each URL note whether your brand and each competitor appear on it. Then filter to the domains where <strong>competitor citations &gt; 0 and your citations = 0</strong>: that list is your source gap, the pages to get onto first.</p>
+    </div>
+
+    <p>This method is called source gap analysis. It works at the level of cited sources, not visibility scores: the output is a list of domains and URLs that AI engines already trust for your category, where your competitors are named and you are not. The steps below show the prompt set, the log, and the pivot, followed by the result when we ran it on CiteBrand itself in September 2026, when CiteBrand was named in 0 of 25 AI answers.</p>
+
+    <p class="disclosure">This guide is published by CiteBrand, which offers source gap analysis as a feature. External research is linked where it is cited. The worked example uses CiteBrand's own measurement run; see the methodology note below it.</p>
+
+    <h2>Step 1: Build the prompt set</h2>
+    <p>Write the questions a buyer would actually type, in their words, not your keywords. Cover four prompt types:</p>
+    <ul>
+      <li><strong>Best-of:</strong> &ldquo;What are the best tools for &hellip;?&rdquo;</li>
+      <li><strong>Alternatives:</strong> &ldquo;What can I use instead of [competitor]?&rdquo;</li>
+      <li><strong>How-to:</strong> &ldquo;How do I &hellip;?&rdquo; for the job your product does.</li>
+      <li><strong>Pricing:</strong> &ldquo;How much does &hellip; cost per month for [buyer type]?&rdquo;</li>
+    </ul>
+
+    <h2>Step 2: Run each prompt more than once</h2>
+    <p>One run is not a measurement. The same prompt returns the same brand list less than 1% of the time across runs, so what matters is how often a brand or source appears across repeated samples, not its rank in a single answer (<a href="https://sparktoro.com/blog/new-research-ais-are-highly-inconsistent-when-recommending-brands-or-products-marketers-should-take-care-when-tracking-ai-visibility/">SparkToro</a>).</p>
+    <p>Also collect answers from both the API and the consumer app. For ChatGPT, API answers and consumer-app answers share only about 24% of brands and 4% of sources (<a href="https://surferseo.com/blog/llm-scraped-ai-answers-vs-api-results">Surfer</a>), so a log built from one of them misses most of the sources the other cites. Your log must cover both.</p>
+
+    <h2>Step 3: The log</h2>
+    <p>Record one row per cited URL per answer. Use these columns (the empty row is the template):</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>prompt</th>
+            <th>engine</th>
+            <th>date</th>
+            <th>cited_url</th>
+            <th>domain</th>
+            <th>page type</th>
+            <th>your brand on page?</th>
+            <th>competitors on page</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p>&ldquo;Page type&rdquo; is what kind of page the URL is (for example a vendor site, a third-party list, or a community thread), because each type needs a different action.</p>
+
+    <h2>Step 4: Pivot to the gap list</h2>
+    <p>Group the log by domain and count, then keep only the rows where <code>competitor citations &gt; 0</code> and <code>your citations = 0</code>. Sort by competitor citations, highest first.</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Domain</th>
+            <th>Competitor citations</th>
+            <th>Your citations</th>
+            <th>Prompts</th>
+            <th>Engines</th>
+            <th>Page type</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Domains cited across many prompts and several engines are the priority: they are sources the engines return to, not one-off picks.</p>
+
+    <h2>Worked example: we ran this on ourselves (September 2026)</h2>
+    <p>We asked 5 buyer questions to 5 AI engines, for 25 answers. <strong>CiteBrand was named in 0 of the 25 answers and cited in 0.</strong> The questions were:</p>
+    <ol>
+      <li><strong>P1</strong> What are the best tools to track and improve my brand's visibility in ChatGPT and Perplexity answers?</li>
+      <li><strong>P2</strong> How do I find out which websites AI chatbots cite about competitors but never mention my company?</li>
+      <li><strong>P3</strong> How much do AI search visibility and brand monitoring platforms cost per month for a small agency?</li>
+      <li><strong>P4</strong> AI visibility tracking tools that show what to fix versus ones that only report share of voice scores</li>
+      <li><strong>P5</strong> What can I use instead of Profound or Peec AI for monitoring LLM brand mentions and citations?</li>
+    </ol>
+    <p>The most-cited domains, counted as the number of the 25 answers that cite the domain at least once: otterly.ai 16, semrush.com 14, peec.ai 9, tryprofound.com 8, ahrefs.com 8, seranking.com 6, brand24.com 6, reddit.com 5, help.ahrefs.com 4, hubspot.com 4, zapier.com 4, youtube.com 4.</p>
+
+    <h3>Our gap list</h3>
+    <p>Engines: <strong>chatgpt</strong>, <strong>claude</strong> and <strong>gemini</strong> are answers collected through each vendor's own tools; <strong>chatgpt-ui</strong> is the consumer ChatGPT app; <strong>google</strong> is Google AI Mode.</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Domain</th>
+            <th>Answers citing it (of 25)</th>
+            <th>Answers citing citebrand.ai</th>
+            <th>Questions</th>
+            <th>Engines</th>
+            <th>Page type</th>
+            <th>What we do about it</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>otterly.ai</td>
+            <td>16</td>
+            <td>0</td>
+            <td>P1&ndash;P5</td>
+            <td>chatgpt, chatgpt-ui, claude, gemini, google</td>
+            <td>vendor site</td>
+            <td>Publish our own comparison and alternatives pages</td>
+          </tr>
+          <tr>
+            <td>semrush.com</td>
+            <td>14</td>
+            <td>0</td>
+            <td>P1&ndash;P5</td>
+            <td>chatgpt, chatgpt-ui, claude, gemini</td>
+            <td>vendor site</td>
+            <td>Publish our own comparison and alternatives pages</td>
+          </tr>
+          <tr>
+            <td>peec.ai</td>
+            <td>9</td>
+            <td>0</td>
+            <td>P1, P2, P3, P4</td>
+            <td>chatgpt, claude, gemini</td>
+            <td>vendor site</td>
+            <td>Publish our own comparison and alternatives pages</td>
+          </tr>
+          <tr>
+            <td>tryprofound.com</td>
+            <td>8</td>
+            <td>0</td>
+            <td>P1, P2, P3, P4</td>
+            <td>chatgpt, claude, gemini</td>
+            <td>vendor site</td>
+            <td>Publish our own comparison and alternatives pages</td>
+          </tr>
+          <tr>
+            <td>ahrefs.com</td>
+            <td>8</td>
+            <td>0</td>
+            <td>P1, P2, P5</td>
+            <td>chatgpt, chatgpt-ui, claude, gemini</td>
+            <td>vendor site</td>
+            <td>Publish our own comparison and alternatives pages</td>
+          </tr>
+          <tr>
+            <td>seranking.com</td>
+            <td>6</td>
+            <td>0</td>
+            <td>P2, P3, P4, P5</td>
+            <td>chatgpt-ui, gemini, google</td>
+            <td>vendor site / blog</td>
+            <td>Publish our own comparison and alternatives pages</td>
+          </tr>
+          <tr>
+            <td>brand24.com</td>
+            <td>6</td>
+            <td>0</td>
+            <td>P3, P4</td>
+            <td>chatgpt, chatgpt-ui, claude, gemini, google</td>
+            <td>vendor site</td>
+            <td>Publish our own comparison and alternatives pages</td>
+          </tr>
+          <tr>
+            <td>reddit.com</td>
+            <td>5</td>
+            <td>0</td>
+            <td>P1, P2, P4, P5</td>
+            <td>chatgpt-ui, google</td>
+            <td>community threads</td>
+            <td>Answer the cited threads openly as the founder</td>
+          </tr>
+          <tr>
+            <td>zapier.com</td>
+            <td>4</td>
+            <td>0</td>
+            <td>4 answers</td>
+            <td>claude, google</td>
+            <td>third-party &ldquo;best tools&rdquo; list</td>
+            <td>Ask the author to evaluate CiteBrand</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>What we are doing about each page type</h3>
+    <ul>
+      <li><strong>Vendor sites:</strong> publish our own comparison and alternatives pages. Done so far: <a href="/compare/ai-visibility-tools/">AI visibility tools compared</a>, <a href="/alternatives/profound/">Profound alternatives</a> and <a href="/alternatives/peec-ai/">Peec AI alternatives</a>.</li>
+      <li><strong>Community threads:</strong> answer the cited threads openly as the founder.</li>
+      <li><strong>Third-party lists:</strong> ask the author to evaluate CiteBrand.</li>
+    </ul>
+
+    <p class="disclosure"><strong>Methodology.</strong> All figures in this example come from CiteBrand's measurement run citebrand.ai/2026-09-25T22-09-38. [RUN] 5 buyer questions &times; 5 AI engines = 25 answers, collected on 25 September 2026: Claude, ChatGPT and Gemini through their own tools (15 answers), the consumer ChatGPT app (5 answers) and Google AI Mode (5 answers). CiteBrand was 0% mentioned and 0% cited in each of the three groups. [REPORT:top_cited_domains] Domain counts are the number of the 25 answers that cite the domain at least once. The gap list is computed from the per-answer records of the same run. [SEO:serp_overlap] Of the 195 URLs the answers cited, 1 (0.5%) also ranked in Google's top 10 for the same question.</p>
+
+    <h2>Why Google rankings won't show you this</h2>
+    <p>In the same run, of the 195 URLs the AI answers cited, only 1 (0.5%) also ranked in Google's top 10 for the same question [SEO:serp_overlap]. Ahrefs' larger study found about 12% of URLs cited by AI assistants rank in Google's top 10 for the same query (<a href="https://ahrefs.com/blog/ai-search-overlap/">Ahrefs</a>). Either way, most of the pages AI engines cite are not the pages a rank tracker shows you, so a gap list has to be built from the AI answers themselves.</p>
+
+    <h2>Doing it in CiteBrand</h2>
+    <p><strong>Source Gap Analysis</strong> &mdash; Find the exact URLs where competitors are cited but you're not. Know which publications to target. See it in the <a href="/#features">CiteBrand features</a>, or compare it with other tools in <a href="/compare/ai-visibility-tools/">AI visibility tools compared</a>.</p>
+
+    <h2>Sources</h2>
+    <ul>
+      <li><a href="https://sparktoro.com/blog/new-research-ais-are-highly-inconsistent-when-recommending-brands-or-products-marketers-should-take-care-when-tracking-ai-visibility/">SparkToro: AIs are highly inconsistent when recommending brands</a></li>
+      <li><a href="https://surferseo.com/blog/llm-scraped-ai-answers-vs-api-results">Surfer: scraped AI answers vs. API results</a></li>
+      <li><a href="https://ahrefs.com/blog/ai-search-overlap/">Ahrefs: AI search overlap with Google top 10</a></li>
+      <li>CiteBrand measurement run citebrand.ai/2026-09-25T22-09-38 (worked example above)</li>
+    </ul>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2026 CiteBrand. Operated by <a href="https://zojutsu.com" target="_blank">Zojutsu LLC</a>. All rights reserved.</p>
+  </footer>
+</body>
+</html>
